@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MAPA - Maskarino Pacifista</title>
+    <meta name="description" content="Inhale Peace. Exhale Brainrot. Solana memecoin.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(45deg, #ff00ff, #00ff00, #ffff00, #00ffff, #ff0000);
+            background-size: 600% 600%;
+            animation: slime 12s ease infinite;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            overflow-x: hidden;
+        }
+        @keyframes slime { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 4.5rem;
+            text-shadow: 0 0 30px #00ff00;
+            animation: glow 2s infinite alternate;
+            margin-bottom: 10px;
+        }
+        @keyframes glow { from {text-shadow: 0 0 20px #00ff00;} to {text-shadow: 0 0 40px #ff00ff;} }
+
+        .tagline { font-size: 1.8rem; margin: 15px 0 30px; }
+        .bird { width: 320px; animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+
+        .buy-btn {
+            background: #000;
+            color: #00ff00;
+            border: 3px solid #00ff00;
+            padding: 18px 40px;
+            font-size: 1.5rem;
+            margin: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 30px #00ff00;
+            transition: all 0.3s;
+        }
+        .buy-btn:hover { transform: scale(1.1); background:#00ff00; color:#000; box-shadow: 0 0 50px #ff00ff; }
+
+        .ca { margin: 30px 0; font-size: 1.1rem; word-break: break-all; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 15px; }
+
+        .roadmap {
+            padding: 80px 20px;
+            background: rgba(0,0,0,0.6);
+        }
+        .phase {
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+        }
+        .phase img { width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 0 40px #ff00ff; }
+        .phase h3 { font-size: 2.5rem; margin-bottom: 20px; color: #00ffff; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>MASKARINO<br>PACIFISTA</h1>
+        <p class="tagline">$MAPA – Inhale Peace. Exhale Brainrot.</p>
+        <img src="assets/bird1.png" alt="Maskarino" class="bird">
+        
+        <div style="margin:40px 0;">
+            <button class="buy-btn" onclick="window.open('https://pump.fun/PLATZHALTER_CA','_blank')">BUY ON PUMP.FUN</button>
+            <button class="buy-btn" onclick="window.open('https://four.meme/token/PLATZHALTER_CA','_blank')">BUY ON FOUR.MEME</button>
+        </div>
+
+        <div class="ca">
+            Contract Address:<br>
+            <b>PLATZHALTER_CA</b>
+        </div>
+    </section>
+
+    <section class="roadmap">
+        <div class="phase">
+            <h3>Phase 1 – Erweckung</h3>
+            <img src="assets/bird1.png" alt="Phase 1">
+            <p>Stealth Launch • 500 Holder in 24h • Viral Raids</p>
+        </div>
+        <div class="phase">
+            <h3>Phase 2 – Toxic Rain</h3>
+            <img src="assets/bird2.png" alt="Phase 2">
+            <p>Website live • 1000+ Memes • Raydium Migration</p>
+        </div>
+        <div class="phase">
+            <h3>Phase 3 – Kult</h3>
+            <img src="assets/bird3.png" alt="Phase 3">
+            <p>CEX Listings • NFT Drop • Merch</p>
+        </div>
+        <div class="phase">
+            <h3>Phase 4 – World Peace</h3>
+            <img src="assets/bird4.png" alt="Phase 4">
+            <p>Top 10 Memecoin • 50% Supply Burn • Eternal Brainrot</p>
+        </div>
+    </section>
+
+    <footer>
+        Telegram • Twitter • Dexscreener (live sobald CA da)<br>
+        © 2025 Maskarino Pacifista – All Rights Reserved in Brainrot
+    </footer>
+
+</body>
+              </html>
