@@ -1,504 +1,142 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Maskarino Pacifisto — $MAPA</title>
-  <meta name="description" content="$MAPA – Inhale Peace. Exhale Brainrot. A New Brainrot Is Born. Launching on Pump.fun & Four.meme." />
-  <meta name="theme-color" content="#0f0710" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maskarino Pacifisto - MAPA</title>
   <style>
-    /* Reset & base */
-    :root{
-      --bg1: #1a0326;
-      --grad-a: #6f2bdc;
-      --grad-b: #12e0a8;
-      --accent1:#ff49d1;
-      --accent2:#f4ff4d;
-      --glass: rgba(255,255,255,0.06);
-      --card: rgba(0,0,0,0.45);
-      --text: #e9eef8;
-      --muted: #bfc7d0;
-      --radius: 14px;
-      --max-width: 1100px;
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700;900&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background: radial-gradient(circle at top, #ff00ff, #00ffd8, #ffe600, #7a00ff);
+      background-size: 400% 400%;
+      animation: bgmove 15s ease infinite;
+      color: #fff;
+      text-align: center;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% 10%, rgba(18,224,168,0.06), transparent 10%),
-        radial-gradient(900px 450px at 90% 85%, rgba(111,43,220,0.05), transparent 10%),
-        linear-gradient(180deg, #08040a 0%, #0f0710 100%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
+    @keyframes bgmove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
-    .wrap{
-      width:100%;
-      max-width:var(--max-width);
-      margin:0 auto;
+    .hero {
+      padding: 80px 20px;
     }
-
-    /* Card / container */
-    .site {
-      border-radius:20px;
-      overflow:visible;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      box-shadow: 0 20px 50px rgba(2,0,20,0.6);
-      padding:28px;
+    .hero img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      box-shadow: 0 0 40px #00ffea;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #000;
+    }
+    h2 {
+      font-size: 1.7rem;
+      color: #ffe600;
+      margin-top: -10px;
+    }
+    .btns a {
+      display: inline-block;
+      margin: 12px;
+      padding: 14px 28px;
+      background: #000000aa;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btns a:hover {
+      transform: scale(1.1);
+      background: #ffffff22;
+    }
+    .section {
+      padding: 50px 15px;
+      background: rgba(0,0,0,0.25);
+      border-top: 3px dashed #fff;
+      border-bottom: 3px dashed #fff;
+      margin: 40px 0;
       backdrop-filter: blur(6px);
     }
-
-    /* HERO */
-    .hero{
-      display:flex;
-      gap:28px;
-      align-items:center;
-      justify-content:space-between;
-      padding:26px;
-      border-radius:12px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
-      position:relative;
-      overflow:visible;
-      margin-bottom:22px;
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
-    .hero-left{
-      min-width:0;
-      flex:1;
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 0 20px #0008;
     }
-    .logo-wrap{
-      width:240px;
-      height:240px;
-      border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-      box-shadow: 0 10px 30px rgba(16,0,40,0.5), inset 0 -6px 18px rgba(0,0,0,0.2);
-      transition:transform .45s cubic-bezier(.2,.9,.3,1);
-      margin-right:22px;
-      border:6px solid rgba(0,0,0,0.6);
+    footer {
+      padding: 40px;
+      background: #000000aa;
+      margin-top: 80px;
+      font-size: 0.9rem;
     }
-    .logo-wrap img{
-      width:86%;
-      height:86%;
-      object-fit:contain;
-      display:block;
-      border-radius:999px;
-      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
+    .social a {
+      margin: 10px;
+      color: #ffe600;
+      font-size: 1.4rem;
+      text-decoration: none;
     }
-    .logo-wrap:hover{ transform: translateY(-6px) scale(1.02); }
-
-    .hero-content{
-      padding:8px 6px;
-    }
-    h1{
-      margin:0 0 6px 0;
-      font-size:28px;
-      letter-spacing:-0.8px;
-      line-height:1.02;
-      color:var(--text);
-      text-shadow: 0 4px 18px rgba(111,43,220,0.18);
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .ticker{
-      font-weight:700;
-      color:#fff;
-      padding:6px 10px;
-      background:linear-gradient(90deg,var(--accent1), #7dffb2);
-      border-radius:999px;
-      font-size:13px;
-      box-shadow: 0 6px 22px rgba(111,43,220,0.18);
-    }
-    .headline{
-      font-size:20px;
-      margin:6px 0 12px 0;
-      color:var(--muted);
-    }
-
-    .cta-row{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .btn {
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-      border:0;
-      transition:transform .18s ease, box-shadow .18s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-      color: #0f0710;
-    }
-    .btn:active{ transform:translateY(2px) }
-    .btn-primary{
-      background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
-    }
-    .btn-ghost{
-      background: transparent;
-      color:var(--text);
-      border:1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(6px);
-      padding:12px 16px;
-    }
-
-    .hero-right{
-      width:420px;
-      min-width:260px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:flex-end;
-    }
-    .keycard{
-      width:100%;
-      background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(255,255,255,0.02));
-      padding:14px;
-      border-radius:12px;
-      text-align:right;
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .keycard b{display:block; font-size:13px}
-    .small{ font-size:13px; color:var(--muted); margin-top:6px; }
-
-    /* Sections */
-    section{
-      margin:18px 0;
-      padding:18px;
-      border-radius:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.08));
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .two-cols{
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:22px;
-    }
-    .panel-title{ font-size:18px; margin:0 0 8px 0; color:var(--text) }
-    p.lead{ color:var(--muted); margin:0 0 8px 0; line-height:1.5 }
-
-    /* features grid */
-    .features{
-      display:grid;
-      grid-template-columns: repeat(2,1fr);
-      gap:14px;
-    }
-    .feature{
-      padding:14px;
-      border-radius:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    .feature h4{ margin:0 0 6px 0 }
-    .muted{ color:var(--muted); font-size:14px }
-
-    /* roadmap list */
-    .roadmap{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .roadmap .item{
-      padding:10px 12px;
-      border-radius:10px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(0,0,0,0.03));
-      border:1px solid rgba(255,255,255,0.02);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    /* community */
-    .community{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 12px;
-      background:var(--glass);
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.03);
-      color:var(--text);
-      text-decoration:none;
-      font-weight:600;
-    }
-
-    /* footer */
-    footer{
-      margin-top:18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      padding:10px 12px;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.06));
-      border:1px solid rgba(255,255,255,0.02);
-    }
-    footer small{ color:var(--muted) }
-
-    /* responsiveness */
-    @media (max-width:980px){
-      .two-cols{ grid-template-columns: 1fr; }
-      .hero{ flex-direction:column; align-items:flex-start }
-      .hero-right{ width:100%; align-items:flex-start }
-      .logo-wrap{ width:160px; height:160px }
-    }
-    @media (max-width:560px){
-      body{ padding:18px }
-      .logo-wrap{ width:120px; height:120px }
-      h1{ font-size:20px }
-      .headline{ font-size:15px }
-    }
-
-    /* small decorative animations */
-    .drip {
-      position:absolute;
-      left:6%;
-      bottom:-18px;
-      width:80px;
-      height:80px;
-      background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), transparent 10%), linear-gradient(180deg, rgba(111,43,220,0.18), rgba(18,224,168,0.08));
-      border-radius:50%;
-      filter: blur(8px);
-      opacity:0.85;
-      transform: translateY(0);
-      animation: floaty 5s ease-in-out infinite;
-      pointer-events:none;
-    }
-    @keyframes floaty{
-      0%{ transform:translateY(0) scale(1) }
-      50%{ transform:translateY(-12px) scale(1.02) }
-      100%{ transform:translateY(0) scale(1) }
-    }
-
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="site" role="main">
-      <div class="hero" aria-label="Hero">
-        <div style="display:flex; align-items:center;">
-          <div class="logo-wrap" title="Maskarino Pacifisto Logo">
-            <!-- 1) Setze hier dein echtes Logo als logo.png in den selben Ordner oder passe den Pfad an -->
-            <img src="logo.png" alt="Maskarino Pacifisto Logo (rund)" onerror="this.style.opacity=0.9; this.alt='Logo fehlt - bitte logo.png in den Ordner legen';" />
-          </div>
-          <div class="hero-left">
-            <div class="hero-content">
-              <h1><span class="ticker">$MAPA</span> <span style="margin-left:8px">Inhale Peace. Exhale Brainrot.</span></h1>
-              <div class="headline">A New Brainrot Is Born</div>
-              <p class="lead" style="max-width:60ch;">
-                In a world so toxic that even angels wear gas masks, Maskarino Pacifisto was born. He inhales peace and exhales glowing neon slime. Wherever he lands, grass dies — but brainrot grows.
-              </p>
-
-              <div class="cta-row" style="margin-top:12px;">
-                <a class="btn btn-primary" href="https://pump.fun" target="_blank" rel="noopener noreferrer">Launch on Pump.fun</a>
-                <a class="btn btn-ghost" href="https://four.meme" target="_blank" rel="noopener noreferrer">Launch on Four.Meme</a>
-                <a class="btn btn-ghost" href="#community">Community</a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-right" aria-hidden="false">
-          <div class="keycard">
-            <b>Quick Facts</b>
-            <div class="small">
-              <div>Ticker: <strong>$MAPA</strong></div>
-              <div>Chain: <strong>Solana</strong></div>
-              <div>Launch: <strong>Pump.fun & Four.meme</strong></div>
-            </div>
-          </div>
-
-          <div class="keycard" style="margin-top:8px;">
-            <b>Vision</b>
-            <div class="small">Make love, not war — but if we’re going to war, do it in 4K with slime effects.</div>
-          </div>
-
-        </div>
-
-        <div class="drip" aria-hidden="true"></div>
-      </div>
-
-      <!-- STORY / LORE -->
-      <section aria-labelledby="lore-title">
-        <h3 id="lore-title" class="panel-title">The Toxic Origin of Maskarino Pacifisto</h3>
-        <p class="lead">
-          In einer Welt, die so toxisch wurde, dass selbst Engel Gasmasken tragen müssen, entstand Maskarino Pacifisto.
-        </p>
-        <p class="muted" style="margin-top:8px;">
-          He’s not a normal bird. He’s the last survivor of an ancient pacifist cult that tried to stop the apocalypse with pure love and olive branches… and failed miserably.
-        </p>
-        <p class="muted" style="margin-top:8px;">
-          Now he flies through the radioactive wasteland with giant wings, inhales peace, and exhales glowing neon slime. Wherever he lands, grass dies — but brainrot grows uncontrollably.
-        </p>
-        <p style="margin-top:10px; font-weight:700;">His message is simple:</p>
-        <blockquote style="margin:8px 0; padding:10px 12px; border-left:4px solid rgba(111,43,220,0.6); background:rgba(255,255,255,0.01); border-radius:8px; color:var(--muted);">
-          “Make love, not war — but if we’re going to war, do it in 4K with slime effects.”
-        </blockquote>
-        <p class="muted">He is the pacifist nobody asked for but everybody needs. The saint that sins. The bird that will save the world… by finally breaking it.</p>
-        <p style="margin-top:10px; font-weight:700;">Welcome to the cult. Welcome to <span style="color:var(--accent1)">$MAPA</span>.</p>
-      </section>
-
-      <!-- FEATURES & TOKEN -->
-      <section>
-        <div class="two-cols">
-          <div>
-            <h3 class="panel-title">Why $MAPA Will Infect the Internet</h3>
-            <div class="features" style="margin-top:12px;">
-              <div class="feature">
-                <h4>Radioactive Peace</h4>
-                <div class="muted">Maskarino verbindet Frieden mit toxischer Ästhetik — viraler Content ist vorprogrammiert.</div>
-              </div>
-              <div class="feature">
-                <h4>Cult-Energy</h4>
-                <div class="muted">Starke Lore → starke Memes. Charakter > anonymous token.</div>
-              </div>
-              <div class="feature">
-                <h4>Winged Apocalypse</h4>
-                <div class="muted">Engel + Gasmaske + Slime = Meme-Formel.</div>
-              </div>
-              <div class="feature">
-                <h4>Memetic Survivability</h4>
-                <div class="muted">Made for stickers, shorts, GIFs, and community chaos.</div>
-              </div>
-            </div>
-          </div>
-
-          <aside style="min-width:240px;">
-            <h3 class="panel-title">The $MAPA Blueprint</h3>
-            <div style="margin-top:10px; padding:12px; border-radius:10px; background:var(--card);">
-              <div style="display:flex; justify-content:space-between; gap:8px; color:var(--muted)">
-                <div>Ticker</div><div><strong>$MAPA</strong></div>
-              </div>
-              <div style="display:flex; justify-content:space-between; gap:8px; color:var(--muted); margin-top:8px;">
-                <div>Chain</div><div><strong>Solana</strong></div>
-              </div>
-              <div style="display:flex; justify-content:space-between; gap:8px; color:var(--muted); margin-top:8px;">
-                <div>Launching on</div><div><strong>Pump.fun & Four.meme</strong></div>
-              </div>
-              <div style="margin-top:10px; color:var(--muted)">Utility? Nah. The cult is the utility.</div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- ROADMAP -->
-      <section>
-        <h3 class="panel-title">The Cult Roadmap — Or Whatever Is Left Of It</h3>
-        <div class="roadmap" style="margin-top:12px;">
-          <div class="item">
-            <div>Top 10 memecoin market cap</div>
-            <div style="color:var(--accent1); font-weight:700;">Ambition</div>
-          </div>
-          <div class="item">
-            <div>Massive community burn (50%+ supply)</div>
-            <div style="color:var(--accent1); font-weight:700;">Sacrifice</div>
-          </div>
-          <div class="item">
-            <div>Maskarino becomes Solana’s official mascot</div>
-            <div style="color:var(--accent1); font-weight:700;">Goal</div>
-          </div>
-          <div class="item">
-            <div>Charity: plant real trees with the olive branch (ironic)</div>
-            <div style="color:var(--accent1); font-weight:700;">Ironic CSR</div>
-          </div>
-          <div class="item">
-            <div>Eternal brainrot. Forever.</div>
-            <div style="color:var(--accent1); font-weight:700;">Forever</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- COMMUNITY -->
-      <section id="community">
-        <h3 class="panel-title">Join the Cult</h3>
-        <p class="muted">Massive community burn, memeinhalte, chaos — keine Finanzberatung.</p>
-        <div style="margin-top:12px;" class="community">
-          <a class="pill" href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a class="pill" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a class="pill" href="https://dexscreener.com/" target="_blank" rel="noopener noreferrer">Dexscreener</a>
-        </div>
-      </section>
-
-      <!-- GALLERY (minimal placeholder) -->
-      <section aria-label="Gallery">
-        <h3 class="panel-title">Art & Visuals</h3>
-        <p class="muted">High-res crops & stickers of Maskarino for social, merch and short-form content. Keep the art crisp — upload PNGs at 300 DPI.</p>
-        <div style="display:flex; gap:12px; margin-top:10px; flex-wrap:wrap;">
-          <div style="width:120px; height:120px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08)); display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.02);">
-            <small class="muted">Sticker 1</small>
-          </div>
-          <div style="width:120px; height:120px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08)); display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.02);">
-            <small class="muted">Sticker 2</small>
-          </div>
-          <div style="width:120px; height:120px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08)); display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.02);">
-            <small class="muted">Hero Crop</small>
-          </div>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer>
-        <div>
-          <img src="logo.png" alt="logo small" style="height:32px; width:32px; border-radius:999px; object-fit:cover; border:2px solid rgba(255,255,255,0.04)" onerror="this.style.display='none'"/>
-        </div>
-        <div style="flex:1; text-align:center;">
-          <small>© 2025 Maskarino Pacifisto – All rights reserved in Brainrot</small>
-        </div>
-        <div style="text-align:right;">
-          <small style="display:block">Top 10 memecoin market cap · Massive community burn · Charity</small>
-        </div>
-      </footer>
-
+<body>  <div class="hero">
+    <img src="LOGO_HIER_EINFUEGEN.png" alt="MAPA Logo" />
+    <h1>$MAPA – Inhale Peace. Exhale Brainrot.</h1>
+    <h2>A New Brainrot Is Born</h2>
+    <div class="btns">
+      <a href="#">Launch on Pump.fun</a>
+      <a href="#">Launch on Four.meme</a>
     </div>
-  </div>
-
-  <script>
-    // Minimal JS: smooth scroll & micro interactions
-    (function(){
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', function(e){
-          const id = this.getAttribute('href');
-          if(id.length>1){
-            e.preventDefault();
-            const el = document.querySelector(id);
-            if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
-          }
-        });
-      });
-
-      // small animation: pulsing logo border glow
-      const logo = document.querySelector('.logo-wrap');
-      if(logo){
-        let t=0;
-        setInterval(()=> {
-          t = (t+0.02) % (Math.PI*2);
-          const s = 1 + Math.sin(t)*0.01;
-          logo.style.transform = `translateY(${Math.sin(t)*3}px) scale(${s})`;
-        }, 40);
-      }
-    })();
-  </script>
-</body>
-  </html>
+  </div>  <div class="section">
+    <h2>The Toxic Origin of Maskarino Pacifisto</h2>
+    <p>
+      In einer Welt, die so toxisch wurde, dass selbst Engel Gasmasken tragen müssen, entstand Maskarino Pacifisto.<br><br>
+      Er ist der letzte Überlebende eines pazifistischen Kults, der versuchte, die Apokalypse mit Liebe und Olivenzweigen aufzuhalten – und scheiterte.<br><br>
+      Jetzt fliegt er durch das radioaktive Ödland, inhaliert Frieden und atmet leuchtenden Neon-Schleim aus. Überall wo er landet, stirbt das Gras… aber Brainrot wächst.<br><br>
+      „Make love, not war — aber wenn wir Krieg führen, dann in 4K mit Slime-Effekten.“
+    </p>
+  </div>  <div class="section">
+    <h2>Why $MAPA Will Infect the Internet</h2>
+    <div class="features">
+      <div class="card">Radioactive Peace – perfekte virale Ästhetik.</div>
+      <div class="card">Cult Energy – ein Charakter schlägt Utility immer.</div>
+      <div class="card">Winged Apocalypse – Engel + Gasmaske + Neon = Meme-Gift.</div>
+      <div class="card">Memetic Survivability – gebaut für Memes, GIFs, Chaos.</div>
+    </div>
+  </div>  <div class="section">
+    <h2>The $MAPA Blueprint</h2>
+    <p>
+      <strong>Ticker:</strong> $MAPA<br>
+      <strong>Chain:</strong> Solana<br>
+      <strong>Launching on:</strong> Pump.fun & Four.meme<br>
+      <strong>Utility:</strong> Keine. Der Kult IST die Utility.
+    </p>
+  </div>  <div class="section">
+    <h2>Cult Roadmap</h2>
+    <p>
+      • Top 10 Memecoin Market Cap<br>
+      • Massive Community Burn (50%+)<br>
+      • Maskarino wird Solanas Maskottchen<br>
+      • Charity: echte Bäume pflanzen (ironisch)<br>
+      • Eternal Brainrot.
+    </p>
+  </div>  <div class="section">
+    <h2>Join the Cult</h2>
+    <div class="social">
+      <a href="#">Telegram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Dexscreener</a>
+    </div>
+  </div>  <footer>
+    © 2025 Maskarino Pacifisto – All rights reserved in Brainrot<br>
+    This is a memecoin. Nothing is real.
+  </footer></body>
+</html>
