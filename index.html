@@ -1,1 +1,301 @@
-bjb
+<!DOCTYPE html><html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maskarino Pacifisto — $MAPA</title>
+  <meta name="description" content="$MAPA — Inhale Peace. Exhale Brainrot. A New Brainrot Is Born" />
+  <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700;900&display=swap');:root{
+  --bg-dark:#060308;
+  --glow-a:#ff3bf0;
+  --glow-b:#00ffe0;
+  --glow-c:#fff04d;
+  --accent1:#ff49d1;
+  --accent2:#8cfffb;
+}
+
+html,body{height:100%;margin:0;padding:0;background:var(--bg-dark);font-family:'Kanit',system-ui,Segoe UI,Roboto,Arial;color:#fff;overflow-x:hidden}
+
+/* PARALLAX LAYERS */
+.parallax-layer{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:140vw;height:140vh;pointer-events:none;background-position:center;background-size:cover;z-index:-40;opacity:1}
+#layer1{background-image:url('BACKGROUND_LAYER1_URL');filter:contrast(1.05) saturate(1.15) blur(0px);z-index:-40;}
+#layer2{background-image:url('BACKGROUND_LAYER2_URL');filter:contrast(1.02) saturate(1.1) blur(0.6px);z-index:-39;}
+#layer3{background-image:url('BACKGROUND_LAYER3_URL');filter:contrast(1.1) saturate(1.2);z-index:-38}
+
+/* MAIN LAYOUT */
+.wrap{max-width:1200px;margin:28px auto;padding:22px}
+.card{background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(255,255,255,0.02));border-radius:22px;padding:18px;border:2px solid rgba(255,255,255,0.04);box-shadow:0 18px 60px rgba(0,0,0,0.7)}
+
+/* HERO */
+.hero{display:flex;gap:22px;align-items:center;padding:30px;border-radius:18px;position:relative;overflow:visible}
+.logo-wrap{width:300px;height:300px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03), rgba(0,0,0,0.25));border:8px solid rgba(255,255,255,0.06);box-shadow:0 20px 80px rgba(0,0,0,0.8)}
+.logo{width:88%;height:88%;object-fit:contain;border-radius:999px;display:block}
+
+/* Logo warp (SVG filter + CSS animate) */
+.logo-warp{filter:url(#wobble);} 
+@keyframes warpPulse {0%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.03) rotate(-1deg)}100%{transform:scale(1) rotate(0deg)}}
+.logo-wrap{animation:warpPulse 3.6s ease-in-out infinite}
+
+/* glow outlines */
+.logo-wrap::after{content:'';position:absolute;inset:-18px;border-radius:999px;box-shadow:0 0 60px var(--glow-a),0 0 120px var(--glow-b),0 0 200px var(--glow-c);opacity:0.9;pointer-events:none}
+
+/* Headline */
+.hero-meta{flex:1;min-width:0}
+h1{font-size:36px;margin:0 0 6px 0;line-height:1;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,0.7)}
+.ticker{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#0a0610;font-weight:900;margin-right:12px}
+p.lead{color:#e6f9f6;margin:10px 0 14px 0;font-size:15px;line-height:1.45}
+
+/* Buttons */
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 22px;border-radius:14px;font-weight:800;border:0;cursor:pointer;text-decoration:none;color:#0a0710}
+.btn-primary{background:linear-gradient(90deg,var(--glow-a),var(--glow-b));box-shadow:0 10px 40px rgba(0,0,0,0.6),0 0 40px var(--glow-a)}
+.btn-ghost{background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(0,0,0,0.08));border:3px solid rgba(255,255,255,0.06);color:#fff}
+
+/* SLIME OVERLAY */
+.slime-overlay{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;mix-blend-mode:screen;opacity:0.9}
+.slime{position:absolute;width:260px;height:120px;background:linear-gradient(180deg,#38ff9a,#00ffe6);border-radius:120px 120px 60px 60px;filter:blur(6px);transform:translateX(-10%);opacity:0.95}
+.slime.small{width:120px;height:60px;border-radius:60px 60px 30px 30px;transform:translateX(30%)}
+.slime.drip{width:36px;height:60px;border-radius:18px;background:linear-gradient(180deg,#9bff6a,#00ffe6);bottom:-10px;left:55%;position:absolute}
+
+/* CHAOS OBJECTS GENERATED */
+.chaos-object{position:absolute;width:96px;height:96px;background-size:cover;border-radius:12px;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6));transform-origin:center}
+.chaos-gem{width:58px;height:58px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.06)}
+
+/* Cards sections */
+section{margin:40px auto;max-width:1100px}
+.section-card{padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(255,255,255,0.02));border:3px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(0,0,0,0.7)}
+
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:12px}
+.feature{padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.08));border:2px solid rgba(255,255,255,0.03);}
+.feature h4{margin:0 0 6px 0}
+
+/* Chaos UI extras */
+.spark{position:absolute;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle,var(--glow-a),var(--glow-b));filter:blur(6px);opacity:0.95}
+.line{position:absolute;width:2px;height:140px;background:linear-gradient(var(--glow-a),var(--glow-b));filter:blur(2px)}
+
+/* FOOTER */
+footer{margin-top:60px;padding:30px;text-align:center;color:#dfeff0}
+
+/* RESPONSIVE */
+@media (max-width:980px){.features{grid-template-columns:repeat(2,1fr)}.logo-wrap{width:220px;height:220px}.hero{flex-direction:column;align-items:center}}
+@media (max-width:560px){.features{grid-template-columns:1fr}.logo-wrap{width:180px;height:180px}}
+
+  </style>
+</head>
+<body>  <!-- PARALLAX BACKGROUND LAYERS -->  <div id="layer1" class="parallax-layer"></div>
+  <div id="layer2" class="parallax-layer"></div>
+  <div id="layer3" class="parallax-layer"></div>  <div class="wrap">
+    <div class="card hero"><!-- floating chaos objects (generated by JS) -->
+  <div id="chaos-root" aria-hidden="true"></div>
+
+  <!-- logo + meta -->
+  <div class="logo-wrap" aria-hidden="false">
+    <!-- replace with your round logo path -->
+    <img class="logo logo-warp" src="LOGO_HIER_EINFUEGEN.png" alt="Maskarino Pacifisto" />
+  </div>
+
+  <div class="hero-meta">
+    <h1><span class="ticker">$MAPA</span> Inhale Peace. Exhale Brainrot.</h1>
+    <p class="lead">A New Brainrot Is Born — In a world so toxic that even angels wear gas masks, Maskarino Pacifisto was born. He inhales peace and exhales glowing neon slime. Wherever he lands, grass dies — but brainrot grows uncontrollably.</p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="https://pump.fun" target="_blank" rel="noopener">Launch on Pump.fun</a>
+      <a class="btn btn-ghost" href="https://four.meme" target="_blank" rel="noopener">Launch on Four.meme</a>
+    </div>
+  </div>
+
+  <!-- slime overlay elements for hero -->
+  <div class="slime-overlay" aria-hidden="true">
+    <div class="slime" style="left:6%;top:40%;transform:rotate(-14deg);"></div>
+    <div class="slime small" style="left:42%;top:62%;transform:rotate(8deg);"></div>
+    <div class="slime drip" style="left:34%;top:58%;opacity:0.95"></div>
+  </div>
+
+</div>
+
+<!-- STORY -->
+<section>
+  <div class="section-card">
+    <h2>The Toxic Origin of Maskarino Pacifisto</h2>
+    <p>In einer Welt, die so toxisch wurde, dass selbst Engel Gasmasken tragen müssen, entstand Maskarino Pacifisto. Er ist der letzte Überlebende eines uralten pazifistischen Kults, der versuchte, die Apokalypse mit reiner Liebe und Olivenzweigen aufzuhalten — und dabei kläglich scheiterte.</p>
+    <p>Jetzt fliegt er durch das radioaktive Ödland, inhaliert Frieden und atmet leuchtenden Neon-Schleim aus. Überall wo er landet, stirbt das Gras… aber Brainrot wächst unkontrolliert.</p>
+    <blockquote style="margin-top:12px;padding:12px;border-left:4px solid rgba(255,255,255,0.06);">“Make love, not war — but if we’re going to war, do it in 4K with slime effects.”</blockquote>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="section-card">
+    <h2>Why $MAPA Will Infect the Internet</h2>
+    <div class="features">
+      <div class="feature"><h4>Radioactive Peace</h4><div>Maskarino verbindet Frieden mit toxischer Ästhetik — perfekt viral.</div></div>
+      <div class="feature"><h4>Cult Energy</h4><div>Starke Lore, starke Memes — Charakter schlägt Utility.</div></div>
+      <div class="feature"><h4>Winged Apocalypse</h4><div>Engel + Gasmaske + Neon-Slime = Meme-Magie.</div></div>
+      <div class="feature"><h4>Memetic Survivability</h4><div>Sticker, GIFs, Shorts, Merch — alles möglich.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLUEPRINT + ROADMAP -->
+<section>
+  <div class="section-card">
+    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">
+      <div style="flex:1;min-width:220px">
+        <h3>The $MAPA Blueprint</h3>
+        <p><strong>Ticker:</strong> $MAPA<br><strong>Chain:</strong> Solana<br><strong>Launching on:</strong> Pump.fun & Four.meme<br><strong>Utility:</strong> Der Kult ist die Utility.</p>
+      </div>
+      <div style="width:320px">
+        <h3>Roadmap (cult style)</h3>
+        <ul style="text-align:left">
+          <li>Top 10 memecoin market cap</li>
+          <li>Massive community burn (50%+ supply)</li>
+          <li>Maskarino becomes Solana's official mascot</li>
+          <li>Charity: plant real trees with the olive branch (ironic)</li>
+          <li>Eternal brainrot. Forever.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section>
+  <div class="section-card">
+    <h2>Join the Cult</h2>
+    <p>Telegram • Twitter • Dexscreener — massive community burn, memeinhalte, chaos. Keine Finanzberatung.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:12px">
+      <a class="btn btn-ghost" href="#">Telegram</a>
+      <a class="btn btn-ghost" href="#">Twitter</a>
+      <a class="btn btn-ghost" href="#">Dexscreener</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Maskarino Pacifisto – All rights reserved in Brainrot
+</footer>
+
+  </div>  <!-- SVG filter for subtle wobble / warp effect on logo -->  <svg width="0" height="0" style="position:absolute">
+    <filter id="wobble">
+      <feTurbulence xFrequency="0.02" yFrequency="0.02" baseFrequency="0.01" numOctaves="2" seed="2" result="turb" />
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="6" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>  <script>
+    // *******************
+    // Motion & Parallax
+    // *******************
+    (function(){
+      const l1 = document.getElementById('layer1');
+      const l2 = document.getElementById('layer2');
+      const l3 = document.getElementById('layer3');
+
+      // basic mouse-parallax
+      window.addEventListener('mousemove', e=>{
+        const cx = window.innerWidth/2, cy = window.innerHeight/2;
+        const dx = (e.clientX - cx)/cx; const dy = (e.clientY - cy)/cy;
+        l1.style.transform = `translate(calc(-50% + ${dx*10}px), calc(-50% + ${dy*10}px)) scale(1.18)`;
+        l2.style.transform = `translate(calc(-50% + ${dx*20}px), calc(-50% + ${dy*20}px)) scale(1.12)`;
+        l3.style.transform = `translate(calc(-50% + ${dx*40}px), calc(-50% + ${dy*40}px)) scale(1.02)`;
+      });
+
+      // simple scroll parallax adjustment
+      window.addEventListener('scroll', ()=>{
+        const s = window.scrollY; l1.style.top = `calc(50% - ${s*0.02}px)`; l2.style.top = `calc(50% - ${s*0.06}px)`; l3.style.top = `calc(50% - ${s*0.12}px)`;
+      });
+    })();
+
+    // *******************
+    // Generate Floating Chaos Objects
+    // *******************
+    (function(){
+      const root = document.getElementById('chaos-root');
+      const count = 32; // 20-40 objects
+      const imgs = [ 'FLOAT1_URL','FLOAT2_URL','FLOAT3_URL','FLOAT4_URL' ];
+      for(let i=0;i<count;i++){
+        const el = document.createElement('div');
+        el.className = 'chaos-object';
+        const size = 48 + Math.round(Math.random()*100);
+        el.style.width = size+'px'; el.style.height = size+'px';
+        el.style.left = Math.random()*90+'%'; el.style.top = Math.random()*70+'%';
+        el.style.transform = `translate(-50%,-50%) rotate(${Math.random()*40-20}deg)`;
+        el.style.backgroundImage = `url(${imgs[i%imgs.length]})`;
+        el.style.opacity = 0.9 - Math.random()*0.4;
+        el.style.transition = 'transform 10s linear';
+        root.appendChild(el);
+
+        // slow drift animation
+        (function(el){
+          const dx = (Math.random()*40-20);
+          const dy = (Math.random()*40-20);
+          const dur = 8 + Math.random()*10;
+          el.animate([
+            { transform: el.style.transform },
+            { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) rotate(${Math.random()*60-30}deg)` },
+            { transform: el.style.transform }
+          ],{duration:dur*1000,iterations:Infinity,direction:'alternate',easing:'ease-in-out'});
+        })(el);
+      }
+    })();
+
+    // *******************
+    // Chaos sparks & lines
+    // *******************
+    (function(){
+      const root = document.body;
+      for(let i=0;i<18;i++){
+        const s = document.createElement('div'); s.className='spark';
+        s.style.left = (5 + Math.random()*90)+'%'; s.style.top = (5 + Math.random()*80)+'%';
+        s.style.width = 18 + Math.random()*34 + 'px'; s.style.height = s.style.width;
+        s.style.opacity = 0.4 + Math.random()*0.8;
+        root.appendChild(s);
+      }
+      for(let i=0;i<6;i++){
+        const l = document.createElement('div'); l.className='line';
+        l.style.left = (10 + Math.random()*80)+'%'; l.style.top = (10 + Math.random()*70)+'%';
+        l.style.height = 80 + Math.random()*240 + 'px'; l.style.transform = `rotate(${Math.random()*360}deg)`;
+        l.style.opacity = 0.18 + Math.random()*0.6;
+        document.body.appendChild(l);
+      }
+    })();
+
+    // *******************
+    // Logo wobble intensity over time
+    // *******************
+    (function(){
+      const logo = document.querySelector('.logo');
+      if(!logo) return;
+      let t=0;
+      setInterval(()=>{
+        t+=0.02;
+        const s = 1 + Math.sin(t)*0.01;
+        logo.style.transform = `scale(${s})`;
+      },40);
+    })();
+
+    // *******************
+    // Comic outline effect (canvas overlay)
+    // *******************
+    (function(){
+      const canvas = document.createElement('canvas');
+      canvas.style.position='fixed'; canvas.style.left=0; canvas.style.top=0; canvas.style.pointerEvents='none'; canvas.style.zIndex=9999;
+      document.body.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+      function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+      resize(); window.addEventListener('resize',resize);
+      function draw(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        // periodic wavy outlines
+        for(let i=0;i<18;i++){
+          ctx.beginPath(); ctx.lineWidth = 2 + i%3; ctx.strokeStyle = i%2? 'rgba(255,0,255,0.06)':'rgba(0,255,230,0.06)';
+          const cx = Math.random()*canvas.width, cy = Math.random()*canvas.height; const r = 30 + Math.random()*220;
+          ctx.ellipse(cx,cy, r, r*0.6, Math.random()*Math.PI,0,Math.PI*2);
+          ctx.stroke();
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+  </script></body>
+  </html>
