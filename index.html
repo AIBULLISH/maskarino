@@ -25,12 +25,12 @@ html,body{height:100%;margin:0;padding:0;background:var(--bg-dark);font-family:'
 
 /* MAIN LAYOUT */
 .wrap{max-width:1200px;margin:28px auto;padding:22px}
-.card{background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(255,255,255,0.02));border-radius:22px;padding:18px;border:2px solid rgba(255,255,255,0.04);box-shadow:0 18px 60px rgba(0,0,0,0.7)}
+.card{background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(255,255,255,0.02));padding:18px;border:2px solid rgba(255,255,255,0.04);box-shadow:0 18px 60px rgba(0,0,0,0.7)}
 
 /* HERO */
-.hero{display:flex;gap:22px;align-items:center;padding:30px;border-radius:18px;position:relative;overflow:visible}
-.logo-wrap{width:300px;height:300px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03), rgba(0,0,0,0.25));border:8px solid rgba(255,255,255,0.06);box-shadow:0 20px 80px rgba(0,0,0,0.8)}
-.logo{width:88%;height:88%;object-fit:contain;border-radius:999px;display:block}
+.hero{display:flex;gap:22px;align-items:center;padding:30px;position:relative;overflow:visible}
+.logo-wrap{width:300px;height:300px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03), rgba(0,0,0,0.25));border:8px solid rgba(255,255,255,0.06);box-shadow:0 20px 80px rgba(0,0,0,0.8)}
+.logo{width:88%;height:88%;object-fit:contain;display:block}
 
 /* Logo warp (SVG filter + CSS animate) */
 .logo-warp{filter:url(#wobble);} 
@@ -38,40 +38,40 @@ html,body{height:100%;margin:0;padding:0;background:var(--bg-dark);font-family:'
 .logo-wrap{animation:warpPulse 3.6s ease-in-out infinite}
 
 /* glow outlines */
-.logo-wrap::after{content:'';position:absolute;inset:-18px;border-radius:999px;box-shadow:0 0 60px var(--glow-a),0 0 120px var(--glow-b),0 0 200px var(--glow-c);opacity:0.9;pointer-events:none}
+.logo-wrap::after{content:'';position:absolute;inset:-18px;box-shadow:0 0 60px var(--glow-a),0 0 120px var(--glow-b),0 0 200px var(--glow-c);opacity:0.9;pointer-events:none}
 
 /* Headline */
 .hero-meta{flex:1;min-width:0}
 h1{font-size:36px;margin:0 0 6px 0;line-height:1;color:#fff;text-shadow:0 6px 20px rgba(0,0,0,0.7)}
-.ticker{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#0a0610;font-weight:900;margin-right:12px}
+.ticker{display:inline-block;padding:6px 12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#0a0610;font-weight:900;margin-right:12px}
 p.lead{color:#e6f9f6;margin:10px 0 14px 0;font-size:15px;line-height:1.45}
 
 /* Buttons */
 .cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{padding:14px 22px;border-radius:14px;font-weight:800;border:0;cursor:pointer;text-decoration:none;color:#0a0710}
+.btn{padding:14px 22px;font-weight:800;border:0;cursor:pointer;text-decoration:none;color:#0a0710}
 .btn-primary{background:linear-gradient(90deg,var(--glow-a),var(--glow-b));box-shadow:0 10px 40px rgba(0,0,0,0.6),0 0 40px var(--glow-a)}
 .btn-ghost{background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(0,0,0,0.08));border:3px solid rgba(255,255,255,0.06);color:#fff}
 
 /* SLIME OVERLAY */
 .slime-overlay{position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;mix-blend-mode:screen;opacity:0.9}
-.slime{position:absolute;width:260px;height:120px;background:linear-gradient(180deg,#38ff9a,#00ffe6);border-radius:120px 120px 60px 60px;filter:blur(6px);transform:translateX(-10%);opacity:0.95}
-.slime.small{width:120px;height:60px;border-radius:60px 60px 30px 30px;transform:translateX(30%)}
-.slime.drip{width:36px;height:60px;border-radius:18px;background:linear-gradient(180deg,#9bff6a,#00ffe6);bottom:-10px;left:55%;position:absolute}
+.slime{position:absolute;width:260px;height:120px;background:linear-gradient(180deg,#38ff9a,#00ffe6);filter:blur(6px);transform:translateX(-10%);opacity:0.95}
+.slime.small{width:120px;height:60px;transform:translateX(30%)}
+.slime.drip{width:36px;height:60px;background:linear-gradient(180deg,#9bff6a,#00ffe6);bottom:-10px;left:55%;position:absolute}
 
 /* CHAOS OBJECTS GENERATED */
-.chaos-object{position:absolute;width:96px;height:96px;background-size:cover;border-radius:12px;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6));transform-origin:center}
-.chaos-gem{width:58px;height:58px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.06)}
+.chaos-object{position:absolute;width:96px;height:96px;background-size:cover;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.6));transform-origin:center}
+.chaos-gem{width:58px;height:58px;box-shadow:0 6px 18px rgba(0,0,0,0.5);border:3px solid rgba(255,255,255,0.06)}
 
 /* Cards sections */
 section{margin:40px auto;max-width:1100px}
-.section-card{padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(255,255,255,0.02));border:3px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(0,0,0,0.7)}
+.section-card{padding:28px;background:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(255,255,255,0.02));border:3px solid rgba(255,255,255,0.04);box-shadow:0 30px 80px rgba(0,0,0,0.7)}
 
 .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:12px}
-.feature{padding:18px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.08));border:2px solid rgba(255,255,255,0.03);}
+.feature{padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.08));border:2px solid rgba(255,255,255,0.03);}
 .feature h4{margin:0 0 6px 0}
 
 /* Chaos UI extras */
-.spark{position:absolute;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle,var(--glow-a),var(--glow-b));filter:blur(6px);opacity:0.95}
+.spark{position:absolute;width:28px;height:28px;background:radial-gradient(circle,var(--glow-a),var(--glow-b));filter:blur(6px);opacity:0.95}
 .line{position:absolute;width:2px;height:140px;background:linear-gradient(var(--glow-a),var(--glow-b));filter:blur(2px)}
 
 /* FOOTER */
@@ -297,5 +297,18 @@ footer{margin-top:60px;padding:30px;text-align:center;color:#dfeff0}
       draw();
     })();
 
-  </script></body>
-  </html>
+  </script>  <section class="lore-section">
+    <h2 class="section-title">The Toxic Origin of Maskarino Pacifisto</h2>
+    <p class="section-text">
+      In einer Welt, die so toxisch wurde, dass selbst Engel Gasmasken tragen müssen, entstand Maskarino Pacifisto.<br><br>
+      Er ist kein normaler Vogel. Er ist der letzte Überlebende eines uralten pazifistischen Kults, der versuchte, die Apokalypse mit reiner Liebe und Olivenzweigen aufzuhalten – und dabei kläglich scheiterte.<br><br>
+      Jetzt fliegt er durch das radioaktive Ödland, inhaliert Frieden und atmet leuchtenden Neon-Schleim aus. Überall wo er landet, stirbt das Gras… aber Brainrot wächst unkontrolliert.<br><br>
+      Seine Botschaft ist simpel:<br>
+      <i>„Make love, not war — doch wenn wir schon Krieg führen, dann bitte in 4K und mit Slime-Effekten.“</i><br><br>
+      Er ist der Pazifist, den niemand wollte, aber jeder braucht.<br>
+      Der Heilige, der sündigt.<br>
+      Der Vogel, der die Welt retten wird – indem er sie endgültig bricht.<br><br>
+      Welcome to the cult. Welcome to <b>$MAPA</b>.
+    </p>
+  </section></body>
+</html>
